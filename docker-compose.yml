@@ -1,0 +1,14 @@
+# mantener un container abierto desde docker compose:
+# https://stackoverflow.com/questions/36249744/interactive-shell-using-docker-compose
+version: "3.9"
+
+services:
+
+  backend:
+    image: python:3.8
+    container_name: python-vision
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+
+    volumes:
+      - /home/josue/vision_jose/hostDirectory:/root/containerDirectory
